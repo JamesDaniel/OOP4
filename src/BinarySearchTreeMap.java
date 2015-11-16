@@ -7,6 +7,11 @@
 
 public class BinarySearchTreeMap<K extends Comparable<K>, V> {
    private Node root;
+   private int size;
+
+    public int size() {
+        return this.size;
+    }
    
    private class Node
    {
@@ -18,6 +23,7 @@ public class BinarySearchTreeMap<K extends Comparable<K>, V> {
    
    public BinarySearchTreeMap(){
      root = null;
+     size = 0;
    }
    
    /* Insert key-value pair into BinarySearchTreeMap
@@ -25,6 +31,7 @@ public class BinarySearchTreeMap<K extends Comparable<K>, V> {
    */
    // insert renamed to put, to match Map interface
    public void put(K k, V v) {
+      this.size++;
       Node newNode = new Node();
       newNode.key = k;
       newNode.val = v;
@@ -89,11 +96,8 @@ public class BinarySearchTreeMap<K extends Comparable<K>, V> {
     }
     
     public int height(){
-        if (root.left == null &&
-            root.right == null)
-            return 0;
-        else
-            return heightSub(root) -1;
+        return heightSub(root); // if you consider the height of a 1 node (root) binary tree to be 
+                               //  zero then subtract 1 from this to get a corrected answer.
     }
     public int heightSub(Node currentNode) {
         if (currentNode == null)
@@ -129,7 +133,7 @@ public class BinarySearchTreeMap<K extends Comparable<K>, V> {
 
         bstMap.print();
         
-        //System.out.println("Size of tree: "+ bstMap.size());
+        System.out.println("Size of tree: "+ bstMap.size());
  
         // search for mobile number given name
         String number = bstMap.get("Jill");

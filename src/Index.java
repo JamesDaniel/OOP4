@@ -64,7 +64,7 @@ public class Index {
         }
     }
         
-//    /** For TreeMap implementation : Displays the index, one word per line. */
+    /** For TreeMap implementation : Displays the index, one word per line. */
 //    public void print() {
 //        // iterate through all entries
 //        Set<Map.Entry<String, List<Integer>>> entries = treeMapIndex.entrySet();

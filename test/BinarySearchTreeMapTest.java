@@ -60,67 +60,36 @@ public class BinarySearchTreeMapTest {
         System.out.println("height");
         
         BinarySearchTreeMap instance = new BinarySearchTreeMap();
-        
         instance.put("Jan", 1);
-        int result = (Integer)instance.height();
-        int expectedResult = 0;
-        assertEquals(expectedResult, result);
-        
         instance.put("Feb", 2);
-        result = (Integer)instance.height();
-        expectedResult = 1;
-        assertEquals(expectedResult, result);
+        instance.put("Mar", 3);
+        instance.put("Apr", 4);
+        instance.put("May", 5);
+        instance.put("Jun", 6);
+        instance.put("Jul", 7);
+        instance.put("Aug", 8);
+        instance.put("Sep", 9);
+        instance.put("Oct", 10);
+        instance.put("Nov", 11);
+        instance.put("Dec", 12);
         
-        instance.put("Mar", 2);
-        result = (Integer)instance.height();
-        expectedResult = 1;
+        int result = instance.height();
+        int expectedResult = 6;
         assertEquals(expectedResult, result);
+        int size = instance.size();
+        int expectedSize = 12;
+        assertEquals(expectedSize, size);
         
-        instance.put("Apr", 3);
+        instance = new BinarySearchTreeMap();
+        instance.put("Meg", 1);
+        instance.put("Rob", 2);
+        instance.put("Bob", 3);
         result = (Integer)instance.height();
         expectedResult = 2;
         assertEquals(expectedResult, result);
-        
-        instance.put("May", 4);
-        result = (Integer)instance.height();
-        expectedResult = 2;
-        assertEquals(expectedResult, result);
-        
-        instance.put("Jun", 5);
-        result = (Integer)instance.height();
-        expectedResult = 2;
-        assertEquals(expectedResult, result);
-        
-        instance.put("Jul", 5);
-        result = (Integer)instance.height();
-        expectedResult = 3;
-        assertEquals(expectedResult, result);
-        
-        instance.put("Aug", 5);
-        result = (Integer)instance.height();
-        expectedResult = 3;
-        assertEquals(expectedResult, result);
-        
-        instance.put("Sep", 5);
-        result = (Integer)instance.height();
-        expectedResult = 3;
-        assertEquals(expectedResult, result);
-        
-        instance.put("Oct", 5);
-        result = (Integer)instance.height();
-        expectedResult = 4;
-        assertEquals(expectedResult, result);
-        
-        instance.put("Nov", 5);
-        result = (Integer)instance.height();
-        expectedResult = 5;
-        assertEquals(expectedResult, result);
-        
-        instance.put("Dec", 5);
-        result = (Integer)instance.height();
-        expectedResult = 5;   // even though node "Dec" is at a height of 4
-                             //  the height of the binary tree is still 5.
-        assertEquals(expectedResult, result);
+        size = instance.size();
+        expectedSize = 3;
+        assertEquals(expectedSize, size);
     }
 
 
